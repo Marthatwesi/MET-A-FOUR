@@ -1,10 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,900;1,700&display=swap");
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,700,300);
-@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Sriracha&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&display=swap");
+
 /* Variables */
 :root {
-  --font-family: "Roboto", sans-serf;
+  --font-family: "Cormorant Infant", serif;
   --normal-font: 400;
   --bold-font: 700;
   --bolder-font: 900;
@@ -17,24 +19,17 @@
   --bottom-margin-2: 1rem;
   --line-height: 1.7rem;
   --transition: 0.3s;
-
-
-  
-
 }
 /* Variables end */
 /* when scrolling */
 
-
 html {
-  scroll-behavior:inherit;
+  scroll-behavior: inherit;
 }
-
 
 .h1,
 .h2,
-.h3
-.h4 {
+.h3 .h4 {
   display: block;
   color: var(--foreground-primary);
 }
@@ -58,11 +53,22 @@ html {
   font-size: var(--fs-4);
   font-weight: 700;
 }
+h5,
+h6 {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: block;
+  color: var(--foreground-primary);
+}
 
-.text-sm { font-size: var(--fs-4); }
+.text-sm {
+  font-size: var(--fs-4);
+}
 
-.text-tiny { font-size: var(--fs-5); }
-
+.text-tiny {
+  font-size: var(--fs-5);
+}
 
 /* css for the nav bar */
 * {
@@ -86,39 +92,110 @@ a:hover {
 
 body {
   font-family: var(--font-family);
-
+  letter-spacing: 1px;
+  font-weight: 500;
 }
 nav {
-    position: sticky;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1.5rem 3.5rem;
-    background-color: var(--bg-color);
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
-  }
-  nav h1{
-    color: black;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 3.5rem;
+  background-color: var(--bg-color);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+}
+nav h1 {
+  color: black;
+}
 
-  }
-  
-  nav a {
-    color: black;
-    transition: var(--transition);
-  }
-  nav a:hover {
-    color: #A15E42;
-    border-bottom: 2px solid grey;
-  }
-  
-  nav ul {
-    display: flex;
-    gap: 1.9rem;
-  }
-  
-  nav ul li {
-    font-weight: var(--bold-font);
-  }
+nav a {
+  color: black;
+  transition: var(--transition);
+}
+nav a:hover {
+  color: #a15e42;
+  border-bottom: 2px solid grey;
+}
+
+nav ul {
+  display: flex;
+  gap: 1.9rem;
+}
+
+nav ul li {
+  font-weight: var(--bold-font);
+}
+
+/* HERO */
+.hero {
+  background-image: url("../img/milad.jpg");
+  height: 100vh;
+
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  position: relative;
+
+  z-index: 2;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(16, 34, 46, 0.6);
+  z-index: -1;
+}
+
+.hero h1 {
+  letter-spacing: 0px;
+  font-weight: 600;
+  align-items: center;
+}
+
+.hero h6 {
+  letter-spacing: 2px;
+  font-size: 40px;;
+  align-items: center;
+}
+
+/* BTN */
+.btn {
+  padding: 14px 32px;
+  border-radius: 100px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 600;
+ 
+}
+.btn-brand {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+}
+
+.btn-brand:hover {
+  color: rgba(0, 0, 0, 0.6);
+  background: transparent;
+  border-color: rgba(0, 0, 0, 0.6);
+}
+
+.btn-outline-brand {
+  color: rgba(0, 0, 0, 0.6);
+  background: transparent;
+  border-color: rgba(0, 0, 0, 0.6);
+}
+
+.btn-outline-brand:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+}
+
